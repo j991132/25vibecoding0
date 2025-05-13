@@ -278,9 +278,3 @@ with st.sidebar:
 
 st.markdown('</div>', unsafe_allow_html=True)
 
-# 푸터
-st.markdown("""
-    <div style='text-align: center; margin-top: 30px; color: #333;'>
-        <p>만든 사람: xAI와 함께하는 Grok 🌌 | 당신의 꿈을 응원합니다! 💖</p>
-    </div>
-""", unsafe_allow_html=True)
