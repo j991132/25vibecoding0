@@ -231,7 +231,7 @@ mbti_jobs = {
     }
 }
 
-# 세션 상태로 선택된 직업 관리
+# 세션 상태로 선택된 직업 및 MBTI 관리
 if 'selected_job' not in st.session_state:
     st.session_state.selected_job = None
 if 'selected_mbti' not in st.session_state:
@@ -261,7 +261,7 @@ if st.session_state.selected_mbti:
     st.markdown('<div class="result-box">', unsafe_allow_html=True)
     st.markdown(f"### {st.session_state.selected_mbti}님을 위한 추천 직업! 🚀")
     for job in mbti_jobs[st.session_state.selected_mbti]["jobs"]:
-        if st.button(job, key=job, help="클릭하면 직업 설명을 볼 수 있어요!"):
+        if st.button(job, key=job.replace(" ", "_"), help="클릭하면 직업 설명을 볼 수 있어요!"):
             st.session_state.selected_job = job
     st.markdown(f"**{st.session_state.selected_mbti}** 유형의 당신은 이 분야에서 빛날 거예요! 🌟 계속해서 꿈을 향해 나아가세요! 💪", unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
@@ -274,6 +274,13 @@ with st.sidebar:
         st.markdown(f"**{st.session_state.selected_job}**")
         st.markdown(description)
     else:
-        st.markdown("직업을 선택하면 여기에 설명이 나타
+        st.markdown("직업을 선택하면 여기에 설명이 나타나요! 😊")
 
-System: * Today's date and time is 08:52 PM KST on Tuesday, May 13, 2025.
+st.markdown('</div>', unsafe_allow_html=True)
+
+# 푸터
+st.markdown("""
+    <div style='text-align: center; margin-top: 30px; color: #333;'>
+        <p>만든 사람: xAI와 함께하는 Grok 🌌 | 당신의 꿈을 응원합니다! 💖</p>
+    </div>
+""", unsafe_allow_html=True)
